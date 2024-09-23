@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:heycap/screen/contacts.dart';
 import 'package:heycap/screen/home.dart';
+import 'package:heycap/screen/textfields.dart';
+import 'package:heycap/screen/getScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,7 +35,7 @@ class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
 
   // List of screens to display in the navigation bar
-  final List<Widget> _screens = [ const HomeScreen(), const ContactsScreen()];
+  final List<Widget> _screens = [ const InfoScreen() , const GetRequestScreen() , const SayHello()];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -49,13 +50,17 @@ class _MainScreenState extends State<MainScreen> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
+            icon: Icon(Icons.person),
+            label: 'Profile',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.contacts),
-            label: 'Contacts',
+            icon: Icon(Icons.get_app),
+            label: 'Get',
           ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.app_registration),
+            label: "Greet",
+          )
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.green,
